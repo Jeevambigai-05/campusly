@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Registrations | Campusly</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">C</div>
+
+            <div>
+
+                <h2>Campusly</h2>
+
+                <span>
+                    Campus Events
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/events">
+                Events
+            </a>
+
+            <a href="/registrations"
+               class="active">
+
+                My Registrations
+
+            </a>
+
+        </div>
+
+
+        <a href="/add-event"
+           class="nav-button">
+
+            + Create Event
+
+        </a>
+
+    </nav>
+
+
+    <main class="page-container">
+
+        <div class="page-header">
+
+            <div>
+
+                <span class="section-label">
+                    YOUR ACTIVITY
+                </span>
+
+                <h1>
+                    My Registrations
+                </h1>
+
+                <p>
+                    Keep track of the events you've joined.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        {% if registrations %}
+
+        <div class="registration-list">
+
+            {% for registration in registrations %}
+
+            <div class="registration-item">
+
+                <div class="registration-number">
+                    {{ loop.index }}
+                </div>
+
+
+                <div class="registration-details">
+
+                    <span>
+                        REGISTERED EVENT
+                    </span>
+
+                    <h2>
+                        {{ registration.event_name }}
+                    </h2>
+
+                    <div class="student-details">
+
+                        <p>
+                            <strong>
+                                Student:
+                            </strong>
+
+                            {{ registration.student_name }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                Email:
+                            </strong>
+
+                            {{ registration.email }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="registration-status">
+
+                    <span class="success-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Registered
+                    </span>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-state large">
+
+            <div class="empty-icon">
+                ✦
+            </div>
+
+            <h2>
+                No registrations yet
+            </h2>
+
+            <p>
+                You haven't registered for any campus events.
+                Explore upcoming events and reserve your spot.
+            </p>
+
+            <a href="/events"
+               class="primary-button">
+
+                Explore Events →
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <strong>
+                Campusly
+            </strong>
+
+            <span>
+                Making campus life more connected.
+            </span>
+
+        </div>
+
+        <p>
+            © 2026 Campusly. Campus Event Registration System.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

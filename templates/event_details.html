@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ event.name }} | Campusly</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">C</div>
+
+            <div>
+                <h2>Campusly</h2>
+                <span>Campus Events</span>
+            </div>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/events" class="active">
+                Events
+            </a>
+
+            <a href="/registrations">
+                My Registrations
+            </a>
+
+        </div>
+
+        <a href="/add-event" class="nav-button">
+            + Create Event
+        </a>
+
+    </nav>
+
+
+    <main class="details-container">
+
+        <a href="/events" class="back-link">
+            ← Back to Events
+        </a>
+
+
+        <div class="details-layout">
+
+
+            <div class="details-main">
+
+                <span class="event-category">
+                    CAMPUS EVENT
+                </span>
+
+                <h1>
+                    {{ event.name }}
+                </h1>
+
+                <p class="details-description">
+                    {{ event.description }}
+                </p>
+
+
+                <div class="details-info-grid">
+
+                    <div class="info-box">
+
+                        <span class="info-icon">
+                            📅
+                        </span>
+
+                        <div>
+                            <small>Date</small>
+
+                            <strong>
+                                {{ event.date }}
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-box">
+
+                        <span class="info-icon">
+                            📍
+                        </span>
+
+                        <div>
+                            <small>Venue</small>
+
+                            <strong>
+                                {{ event.venue }}
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-event">
+
+                    <h2>About this event</h2>
+
+                    <p>
+                        Join us for this exciting campus event.
+                        Connect with fellow students, learn new
+                        skills and make the most of your college
+                        experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="registration-card">
+
+                <div class="registration-header">
+
+                    <span class="registration-label">
+                        EVENT REGISTRATION
+                    </span>
+
+                    <h2>
+                        Reserve your spot
+                    </h2>
+
+                    <p>
+                        Enter your details below to register
+                        for this event.
+                    </p>
+
+                </div>
+
+
+                <form method="POST"
+                      action="/register/{{ event.id }}">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="student_name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+
+                    <button type="submit"
+                            class="register-button">
+
+                        Confirm Registration
+
+                        <span>→</span>
+
+                    </button>
+
+                </form>
+
+
+                <div class="secure-note">
+                    🔒 Your registration details are securely stored.
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <strong>Campusly</strong>
+
+            <span>
+                Making campus life more connected.
+            </span>
+
+        </div>
+
+        <p>
+            © 2026 Campusly. Campus Event Registration System.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

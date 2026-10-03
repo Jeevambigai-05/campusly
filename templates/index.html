@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campusly | Campus Events</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">C</div>
+            <div>
+                <h2>Campusly</h2>
+                <span>Campus Events</span>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="/events">Events</a>
+            <a href="/registrations">My Registrations</a>
+        </div>
+
+        <a href="/add-event" class="nav-button">
+            + Create Event
+        </a>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                ✦ YOUR CAMPUS. YOUR EVENTS.
+            </span>
+
+            <h1>
+                Discover what's<br>
+                <span>happening on campus.</span>
+            </h1>
+
+            <p>
+                Explore workshops, competitions, cultural events,
+                technical sessions and more — all in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/events" class="primary-button">
+                    Explore Events
+                    <span>→</span>
+                </a>
+
+                <a href="/registrations" class="secondary-button">
+                    My Registrations
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="floating-card card-one">
+                <span class="mini-icon">🎓</span>
+                <div>
+                    <strong>Student Events</strong>
+                    <small>All in one place</small>
+                </div>
+            </div>
+
+            <div class="event-preview">
+
+                <div class="preview-top">
+                    <span>UPCOMING EVENT</span>
+                    <span class="status-dot"></span>
+                </div>
+
+                <div class="preview-date">
+                    <strong>15</strong>
+                    <span>OCT<br>2026</span>
+                </div>
+
+                <h3>Tech Fest 2026</h3>
+
+                <p>Annual Technical Festival</p>
+
+                <div class="preview-location">
+                    📍 Main Auditorium
+                </div>
+
+            </div>
+
+            <div class="floating-card card-two">
+                <span class="check">✓</span>
+                <div>
+                    <strong>Easy Registration</strong>
+                    <small>Register in seconds</small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="features">
+
+        <div class="feature-item">
+            <div class="feature-icon">◉</div>
+            <div>
+                <h3>Discover</h3>
+                <p>Find upcoming campus events easily.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div>
+                <h3>Register</h3>
+                <p>Secure your spot with a simple registration.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon">◆</div>
+            <div>
+                <h3>Stay Connected</h3>
+                <p>Never miss an important campus event.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            <strong>Campusly</strong>
+            <span>Making campus life more connected.</span>
+        </div>
+
+        <p>© 2026 Campusly. Campus Event Registration System.</p>
+
+    </footer>
+
+</body>
+
+</html>
